@@ -2,14 +2,14 @@ require './lib/dns/zone/version'
 
 spec = Gem::Specification.new do |s|
   # gem information/details
-  s.name                = 'dns-zone'
+  s.name                = 'dns-zone2'
   s.version             = DNS::Zone::Version
   s.date                = Time.now.strftime('%Y-%m-%d')
   s.summary             = 'A Ruby library for building and parsing DNS zone files.'
   s.license             = 'MIT'
-  s.homepage            = 'https://github.com/lantins/dns-zone'
-  s.authors             = ['Luke Antins']
-  s.email               = ['luke@lividpenguin.com']
+  s.homepage            = 'https://github.com/hetznerZA/dns-zone2'
+  s.authors             = ['Hetzner']
+  s.email               = ['seals@hetzner.co.za ']
 
   # gem settings for what files to include.
   s.files               = %w(Rakefile README.md HISTORY.md Gemfile dns-zone.gemspec)

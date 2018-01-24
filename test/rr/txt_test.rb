@@ -6,7 +6,7 @@ class RR_TXT_Test < DNS::Zone::TestCase
     rr = DNS::Zone::RR::TXT.new
 
     # ensure we can set text parameter
-    rr.text = 'test text'
+    rr.text = '"test text"'
     assert_equal '@ IN TXT "test text"', rr.dump
 
     # with a label set
@@ -23,22 +23,22 @@ class RR_TXT_Test < DNS::Zone::TestCase
     assert_equal 'txtrecord', rr.label
     assert_equal 'IN', rr.klass
     assert_equal 'TXT', rr.type
-    assert_equal 'test text', rr.text
+    assert_equal '"test text"', rr.text
   end
 
   def test_load_multiple_quoted_strings
     rr = DNS::Zone::RR::TXT.new.load('txtrecord IN TXT "part1 yo" " part2 yo"')
-    assert_equal 'part1 yo part2 yo', rr.text
+    assert_equal '"part1 yo" " part2 yo"', rr.text
   end
 
   def test_load_string_with_quotes
     rr = DNS::Zone::RR::TXT.new.load('txtrecord IN TXT "we have \"double\" quotes"')
-    assert_equal %q{we have \"double\" quotes}, rr.text
+    assert_equal %q{"we have \"double\" quotes"}, rr.text
   end
 
   def test_load_multiple_strings_with_quotes
     rr = DNS::Zone::RR::TXT.new.load('txtrecord IN TXT "part1 " "we have \"double\" quotes" " part3"')
-    assert_equal %q{part1 we have \"double\" quotes part3}, rr.text
+    assert_equal %q{"part1 " "we have \"double\" quotes" " part3"}, rr.text
   end
 
 end

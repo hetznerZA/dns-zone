@@ -29,7 +29,7 @@ ns0         IN  HINFO "Intel" "Ubuntu"
 
 ns0         IN  AAAA  2a01:4f8:d12:5ca::2
 
-foo         IN  TXT   "part1""part2"
+foo         IN  TXT   "part1" "part2"
 bar         IN  TXT   ("part1 "
                        "part2 "
                        "part3")
@@ -57,6 +57,7 @@ EOL
 @ IN MX 99 mx.fakemx.net.
 @ IN A 78.47.253.85
 mail IN A 78.47.253.85
+foo IN TXT "part1" "part2"
 EOL
 
   # zone file with multiple zones
@@ -78,7 +79,7 @@ $TTL 3d
 @           IN  A     78.47.253.85
 www         IN  A     78.47.253.85
 
-foo         IN  TXT   "part1""part2"
+foo         IN  TXT   "part1" "part2"
 
 $ORIGIN sub.lividpenguin.com.
 app1                    60 A     1.2.3.4
