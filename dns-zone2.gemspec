@@ -12,7 +12,7 @@ spec = Gem::Specification.new do |s|
   s.email               = ['seals@hetzner.co.za ']
 
   # gem settings for what files to include.
-  s.files               = %w(Rakefile README.md HISTORY.md Gemfile dns-zone.gemspec)
+  s.files               = %w(Rakefile README.md HISTORY.md Gemfile dns-zone2.gemspec)
   s.files              += Dir.glob('{test/**/*,lib/**/*}')
   s.require_paths       = ['lib']
   #s.executables         = ['dns-zone']
